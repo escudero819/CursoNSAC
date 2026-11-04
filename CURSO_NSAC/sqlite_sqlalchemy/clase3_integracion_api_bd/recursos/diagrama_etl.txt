@@ -1,0 +1,47 @@
+FLUJO ETL - INTEGRACION NASA + PANDAS + SQLALCHEMY
+==================================================
+
+PASO 1: EXTRAER (requests)
+-------------------------
+[NASA API NeoWs]
+      |
+      v
+requests.get() + timeout
+      |
+      v
+JSON anidado (element_count, near_earth_objects)
+
+PASO 2: TRANSFORMAR (pandas)
+----------------------------
+pd.json_normalize() / pd.DataFrame()
+      |
+      v
+Filtrar columnas relevantes
+      |
+      v
+Limpiar valores nulos, convertir fechas
+      |
+      v
+DataFrame plano listo para SQL
+
+PASO 3: CARGAR (SQLAlchemy + SQLite)
+------------------------------------
+session.query().filter()  <- verificar duplicados
+      |
+      v
+session.add(nuevo_registro)
+      |
+      v
+session.commit()
+      |
+      v
+Archivo .db con tabla asteroides_nasa
+
+CONSULTA (lectura posterior)
+----------------------------
+pd.read_sql_table() o session.query()
+      |
+      v
+Datos disponibles sin llamar a la API nuevamente
+
+FIN

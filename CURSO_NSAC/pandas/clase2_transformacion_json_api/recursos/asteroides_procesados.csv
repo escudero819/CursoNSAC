@@ -1,0 +1,4 @@
+name,absolute_magnitude_h,estimated_diameter_kilometers_estimated_diameter_min,estimated_diameter_kilometers_estimated_diameter_max,is_potentially_hazardous_asteroid,fecha_consulta,close_approach_data_close_approach_date,close_approach_data_relative_velocity_kilometers_per_hour,close_approach_data_miss_distance_kilometers
+(2026 AB1),22.5,0.10,0.22,False,2026-11-01,2026-11-01,28450,15000000
+(2026 CD2),19.8,0.30,0.55,True,2026-11-01,2026-11-01,15200,32000000
+(2026 EF3),21.0,0.05,0.12,False,2026-11-02,2026-11-02,22100,8000000

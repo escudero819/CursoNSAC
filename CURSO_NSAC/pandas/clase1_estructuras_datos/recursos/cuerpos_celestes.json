@@ -1,0 +1,5 @@
+[
+  {"id": 1, "nombre": "Marte", "tipo": "planeta", "distancia_sol": 227.9},
+  {"id": 2, "nombre": "Fobos", "tipo": "luna", "distancia_sol": 227.9},
+  {"id": 3, "nombre": "Deimos", "tipo": "luna", "distancia_sol": 227.9}
+]

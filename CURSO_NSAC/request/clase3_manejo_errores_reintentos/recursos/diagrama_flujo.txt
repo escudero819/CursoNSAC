@@ -1,0 +1,28 @@
+FLUJO DE PETICIÓN SEGURA CON REQUESTS
+====================================
+
+[Inicio]
+    |
+    v
+[Definir URL y parámetros]
+    |
+    v
+[Hacer petición con timeout]
+    |
+    v
+[¿Éxito? (status 200)]
+   / \
+  Si  No
+  |   |
+  v   v
+[Parsear JSON] [try/except + reintento]
+  |               |
+  v               |
+[Usar datos] <-- [¿Reintentos agotados?]
+                        | \
+                       Si  No
+                       |   v
+                       v   [Esperar y reintentar]
+                   [Plan B: datos caché / aviso]
+
+Fin

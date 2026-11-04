@@ -1,0 +1,16 @@
+Ejemplos para probar la API con curl:
+
+# Endpoint raiz
+curl http://127.0.0.1:8000/
+
+# Listar asteroides
+curl http://127.0.0.1:8000/asteroides
+
+# Asteroide por ID
+curl http://127.0.0.1:8000/asteroide/2
+
+# Buscar por nombre y peligroso
+curl "http://127.0.0.1:8000/buscar?nombre=2026&peligroso=true"
+
+# Documentacion interactiva
+# Abre en el navegador: http://127.0.0.1:8000/docs
