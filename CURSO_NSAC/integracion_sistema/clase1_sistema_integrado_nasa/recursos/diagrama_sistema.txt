@@ -1,0 +1,41 @@
+DIAGRAMA DEL SISTEMA INTEGRADO - HACKATHON NSAC
+================================================
+
+                    +---------------------+
+                    |   EQUIPO NSAC       |
+                    |  (frontend, otros)  |
+                    +---------+-----------+
+                              |
+                              | HTTP (FastAPI)
+                              v
+                    +---------------------+
+                    |   SISTEMA INTEGRADO |
+                    |    (FastAPI)        |
+                    |                     |
+                    |  GET /eventos       |
+                    |  GET /estadisticas  |
+                    |  POST /sincronizar  |
+                    |  DELETE /eventos/{id}|
+                    +---------+-----------+
+                              |
+                              | SQLAlchemy / SQL
+                              v
+                    +---------------------+
+                    |  SQLite Local       |
+                    |  (eventos_espaciales)|
+                    |   (CACHÉ LOCAL)     |
+                    +---------+-----------+
+                              |
+                              | Solo al sincronizar
+                              v
+                    +---------------------+
+                    |   NASA API          |
+                    |  (NeoWs, EONET, APOD)|
+                    |   (requests + pandas)|
+                    +---------------------+
+
+FLUJO DE DATOS:
+1. EQUIPO consulta /eventos -> lee de SQLite (rápido, sin internet)
+2. SINCRONIZAR -> requests consulta NASA -> pandas transforma -> SQLAlchemy guarda en SQLite
+3. ESTADÍSTICAS -> SQLAlchemy lee SQLite -> pandas calcula métricas -> devuelve JSON
+4. EXPORTAR -> SQLAlchemy lee SQLite -> pandas exporta CSV

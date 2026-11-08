@@ -27,7 +27,7 @@ def crear_series_y_dataframe():
     # --- Series: arreglo unidimensional con etiquetas (índice) ---
     temperaturas = pd.Series([22.5, 24.1, 19.8, 21.3, 23.7],
                              index=["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
-                             nombre="Temperatura (°C)")
+                             name="Temperatura (°C)")
 
     print("\n--- Series (temperaturas diarias) ---")
     print(temperaturas)

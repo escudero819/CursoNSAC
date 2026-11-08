@@ -73,7 +73,7 @@ def obtener_apod_fecha_especifica(fecha_str):
     print("=" * 70)
 
     try:
-        response = requests.get(url, params=parametros, timeout=15)
+        response = requests.get(url, params=parametros, timeout=20)
 
         if response.status_code == 200:
             datos = response.json()
