@@ -128,7 +128,7 @@ def consultar_asteroides(conexion, solo_peligrosos=False):
 
         print(f"✓ Se encontraron {len(filas)} registro(s):")
         for fila in filas:
-            print(f"  ID {fila[0]} | {fila[1]} | Ø {fila[2]} km | Peligroso: {'Sí' if fila[3] else 'No'} | {fila[4]}")
+            print(f"  ID {fila[0]} | {fila[1]} | Ø {fila[2]} km | Peligroso: {'Sí' if fila[3] else 'No'} | {fila[4] if len(fila) > 4 else ''}")
         return filas
     except sqlite3.Error as e:
         print(f"✗ Error al consultar: {e}")
